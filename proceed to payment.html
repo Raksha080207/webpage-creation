@@ -1,0 +1,160 @@
+<tr>
+<td>
+
+<div id="Proceed To Payment" class="page" align="center">
+<center>
+
+<!-- FULL WIDTH HEADER -->
+
+<table width="100%" bgcolor="#1e3a5f" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center">
+<style>
+
+body{
+margin:0;
+background-image: url("https://i.pinimg.com/736x/3a/b9/4d/3ab94dc59421bef5b51908a69cde0932.jpg");
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+}
+
+/* Overlay for opacity effect */
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background: rgba(239, 246, 255, 0.85); /* light blue transparent */
+z-index:-1;
+}
+
+</style>
+<br>
+
+<font size="7" color="white"><b>✨ HRV HORIZONS ACADEMY ✨</b></font><br>
+<font size="4" color="#e5e7eb">
+<i>Empowering Young Minds for a Brighter Tomorrow</i>
+</font>
+
+<br><br>
+
+</td>
+</tr>
+</table>
+
+<!-- FULL WIDTH NAVBAR -->
+
+<table width="100%" bgcolor="#334155" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center">
+
+<br>
+
+</td>
+</tr>
+</table>
+<style>
+
+
+.container{
+    width:800px;
+    margin:auto;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+}
+
+h2{
+    color:#1e3a5f;
+}
+
+.option{
+    border:1px solid #ddd;
+    padding:15px;
+    border-radius:8px;
+    margin:10px 0;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.option:hover{
+    background:#f9fafb;
+}
+
+.left{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    background:#facc15;
+    border:none;
+    border-radius:25px;
+    font-size:18px;
+    margin-top:20px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#fbbf24;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Select Payment Method</h2>
+
+<div class="option">
+<div class="left">
+<input type="radio" name="payment" value="Credit/Debit Card">
+<td><a href="credit.html"><font color="#000080"><b>Credit/Debit Card</b></font></a></td>
+</div>
+</div>
+
+<div class="option">
+<div class="left">
+<input type="radio" name="payment" value="Net Banking">
+<td><a href="netbanking.html"><font color="#000080"><b>Net Banking</b></font></a></td>
+</div>
+</div>
+
+
+</div>
+
+<button onclick="continuePayment()">Continue</button>
+
+<p id="result"></p>
+
+</div>
+
+<script>
+function continuePayment(){
+    var payments = document.getElementsByName("payment");
+    var selected = "";
+
+    for(var i=0; i<payments.length; i++){
+        if(payments[i].checked){
+            selected = payments[i].value;
+        }
+    }
+
+    if(selected == ""){
+        alert("Please select a payment method");
+    }else{
+        document.getElementById("result").innerHTML =
+        "You selected: <b>" + selected + "</b>";
+    }
+}
+</script>
+
+</body>
+</html>
